@@ -16,7 +16,7 @@ const linkList = (
 
 const Header = () => {
   return (
-    <nav className="bg-base-100 shadow-lg">
+    <nav className="bg-base-100 fixed top-0 w-full z-10  shadow-lg">
       <div className="navbar max-w-[1440px] mx-auto lg:w-10/12">
         <div className="navbar-start">
           <div className="dropdown">
