@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active{
+    border: 2px solid #23BE0A;
+    
+}
+
+.menu li > *:not(ul, .menu-title, details, .btn).active, .menu li > details > summary:active{
+    background: transparent;
+    color: #23BE0A;
+}
