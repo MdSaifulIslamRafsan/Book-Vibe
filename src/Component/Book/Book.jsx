@@ -4,9 +4,15 @@ import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
   const { bookId, image, bookName, author, rating, category, tags } = book;
-  
 
-  const tag = tags.map((tag) => <li className="rounded-full bg-slate-100 text-[#23BE0A] px-5 whitespace-nowrap py-1" key={tag}>{tag}</li>)
+  const tag = tags.map((tag) => (
+    <li
+      className="rounded-full bg-slate-100 text-[#23BE0A] px-5 whitespace-nowrap py-1"
+      key={tag}
+    >
+      {tag}
+    </li>
+  ));
   return (
     <Link
       to={`/book/${bookId}`}
@@ -16,11 +22,7 @@ const Book = ({ book }) => {
         <div className="bg-gray-500">
           <img src={image} alt="" className="mx-auto py-4 bg-cover mb-4 h-52" />
         </div>
-        <ul className="flex gap-2">
-            {
-                tag
-            }
-        </ul>
+        <ul className="flex gap-2">{tag}</ul>
         <h2 className="mb-1 text-xl font-semibold">{bookName}</h2>
         <p className="text-sm font-semibold text-gray-600">By : {author}</p>
       </div>
