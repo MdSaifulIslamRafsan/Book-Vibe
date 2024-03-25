@@ -5,7 +5,7 @@ import {
 } from "../../Utilities/Read";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { getWishlistData } from "../../Utilities/Wishlist";
+import { getWishlistData, setWishlistData } from "../../Utilities/Wishlist";
 
 const BookDetails = () => {
   const bookDetailsData = useLoaderData();
@@ -38,8 +38,8 @@ const BookDetails = () => {
   ));
 
   const handelReadBtn = (id) => {
-      const readsData = getLocalStorageReadData();
-      const isExist = readsData.find(readId => readId ===  id);
+    const readsData = getLocalStorageReadData();
+    const isExist = readsData.find((readId) => readId === id);
 
     if (!isExist) {
       setLocalStorageReadData(id);
@@ -53,8 +53,42 @@ const BookDetails = () => {
         progress: undefined,
         theme: "light",
       });
-    }else{
-        toast.error('You Have Already Read This Book ', {
+    } 
+    else {
+      toast.error("You Have Already Read This Book ", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
+
+  const handelWishlist = (id) => {
+    const wishlistsData = getWishlistData();
+    const readsData = getLocalStorageReadData();
+    const isExistWishlistsData = wishlistsData.find(
+      (wishlistId) => wishlistId === id
+    );
+    const isExistReadsData = readsData.find((readId) => readId === id);
+    if (!isExistWishlistsData && !isExistReadsData) {
+        setWishlistData(id);
+      toast.success("Books Add To Wishlist", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }else if(isExistReadsData){
+        toast.error("You Have Already Read This Book", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -63,17 +97,20 @@ const BookDetails = () => {
             draggable: true,
             progress: undefined,
             theme: "light",
-            });
-    }
+          });
+    }else {
+        toast.error("You Have Already This Book Add Wishlist  ", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
   };
-
-  const handelWishlist = (id) => {
-    const wishlistsData = getWishlistData();
-    const readsData = getLocalStorageReadData();
-   /*  if(){
-
-    } */
-  }
 
   return (
     <section className="my-10">
@@ -134,7 +171,7 @@ const BookDetails = () => {
               Read
             </button>
             <button
-            onClick={() => handelWishlist(bookId)}
+              onClick={() => handelWishlist(bookId)}
               rel="noopener noreferrer"
               className="px-8 py-3 text-lg font-semibold rounded bg-[#50B1C9] text-gray-50"
             >
