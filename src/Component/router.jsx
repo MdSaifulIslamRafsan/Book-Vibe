@@ -6,6 +6,7 @@ import PageToRead from "../Pages/PageToRead/PageToRead";
 import BookDetails from "./BookDetails/BookDetails";
 import ListedBooks from "../Pages/ListedBook/ListedBook";
 import Category from "../Pages/Category/Category";
+import Contact from "../Pages/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: "/category",
         element: <Category></Category>,
         loader: ()=> fetch("/FakeData.json")
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       
       {
