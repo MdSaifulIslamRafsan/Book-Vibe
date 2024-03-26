@@ -3,7 +3,7 @@ import {
   getLocalStorageReadData,
   setLocalStorageReadData,
 } from "../../Utilities/Read";
-import { Bounce, ToastContainer, toast } from "react-toastify";
+import {ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getWishlistData, setWishlistData } from "../../Utilities/Wishlist";
 

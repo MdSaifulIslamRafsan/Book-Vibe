@@ -31,18 +31,18 @@ const ListedBooks = () => {
         </TabList>
         <TabPanel>
           {
-            readBooks.map((book)=> <>
+            readBooks.map((book , index)=> <section key={index}>
             <h1>{book?.bookName}</h1>
             
-            </>)
+            </section>)
           }
         </TabPanel>
         <TabPanel>
           {
-            wishlists.map((book)=> <>
+            wishlists.map((book , index)=> <section key={index}>
             <h1>{book?.bookName}</h1>
             
-            </> )
+            </section> )
           }
         </TabPanel>
       </Tabs>
