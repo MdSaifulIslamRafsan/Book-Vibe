@@ -11,6 +11,9 @@ const linkList = (
     <li>
       <NavLink to={"/pageToRead"}>Pages to Read</NavLink>
     </li>
+    <li>
+      <NavLink to={"/category"}>Category</NavLink>
+    </li>
   </>
 );
 

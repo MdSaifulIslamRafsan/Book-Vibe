@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
+import { getLocalStorageReadData } from "../../Utilities/Read";
 
 const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink" , "skyblue" , "purple"];
 
@@ -23,7 +24,11 @@ const TriangleBar = (props) => {
 };
 
 const PageToRead = () => {
-    const data = useLoaderData();
+    const booksData = useLoaderData();
+    const getData = getLocalStorageReadData()
+
+    const data = booksData.filter((book)=> getData.includes(book?.bookId));
+    console.log(data);
 
 
 
