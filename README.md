@@ -16,10 +16,11 @@ Implemented with React Router DOM, the website offers seamless navigation betwee
   - Listed Books: Browse through the collection of available books.
 
   - Read Tab: Displays books marked as "Read" by the user, saving selections to local storage for easy access.
-          - Wishlist Tab: Displays books marked as "Wishlist" by the user, saving selections to local storage for future reference.
+
+      - Wishlist Tab: Displays books marked as "Wishlist" by the user, saving selections to local storage for future reference.
 
 
-        - Page to Read: Access specific pages of selected books for reading.
+      - Page to Read: Access specific pages of selected books for reading.
 
 - Custom Shape Bar Chart: Presents a visually appealing representation of the total pages of the book, allowing users to track their progress and plan their reading sessions effectively.
 
@@ -29,7 +30,7 @@ Implemented with React Router DOM, the website offers seamless navigation betwee
     - Fiction: Displays books categorized under fiction.
     - Fantasy: Displays books categorized under fantasy.
     - Thriller: Displays books categorized under thriller.
-    - Young Adult:** Displays books categorized under young adult.
+    - Young Adult: Displays books categorized under young adult.
 - Contact Us: Provides a console interface for users to submit inquiries or feedback directly through the browser console.
 
 # Save to Local Storage: 
