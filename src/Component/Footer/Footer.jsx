@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="px-4 mt-10 divide-y bg-gray-100 text-gray-800">
-      <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+      <div className="max-w-[1440px] lg:w-10/12 flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <a
             rel="noopener noreferrer"
@@ -128,7 +128,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm text-center text-gray-600">
+      <div className="py-6 text-xl text-center text-gray-600">
         © Book Vibe. All rights reserved.
       </div>
     </footer>

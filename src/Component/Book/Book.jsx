@@ -16,10 +16,10 @@ const Book = ({ book }) => {
   return (
     <Link
       to={`/book/${bookId}`}
-      className="flex flex-col p-6 space-y-6 overflow-hidden rounded-lg shadow-md "
+      className="flex border-2 flex-col p-6 space-y-6 overflow-hidden rounded-lg shadow-md "
     >
       <div>
-        <div className="bg-gray-500">
+        <div className="bg-[#F3F3F3]">
           <img src={image} alt="" className="mx-auto py-4 bg-cover mb-4 h-52" />
         </div>
         <ul className="flex gap-2">{tag}</ul>

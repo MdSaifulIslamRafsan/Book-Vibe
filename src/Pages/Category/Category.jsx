@@ -41,11 +41,17 @@ const Category = () => {
                       className="mx-auto py-4 bg-cover mb-4 h-52"
                     />
                   </div>
-                  <ul className="flex gap-2">{book?.tag}</ul>
-                  <h2 className="mb-1 text-xl font-semibold">{book?.bookName}</h2>
-                  <p className="text-sm font-semibold text-gray-600">
-                    By : {book?.author}
-                  </p>
+                
+                      <div className="space-y-3">
+                        <ul className="flex gap-2">{book?.tag}</ul>
+                        <h2 className="mb-1 text-xl font-semibold">{book?.bookName}</h2>
+                        <p className="text-sm  text-gray-600">
+                        <span className="font-semibold text-md"> By :</span> {book?.author}
+                        </p>
+                          <p className="text-sm flex-1  text-gray-600">
+                        <span className="font-semibold text-md">Review :</span> {book?.review}
+                        </p>
+                      </div>
                 </div>
                 <div className="flex flex-wrap border-t-2 border-dashed border-gray-200 pt-4 justify-between">
                   <div className="space-x-2">{book?.category}</div>

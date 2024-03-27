@@ -114,7 +114,7 @@ const BookDetails = () => {
 
   return (
     <section className="my-10">
-      <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+      <div className="container flex flex-col justify-center p-6 mx-auto lg:flex-row lg:justify-between">
         <div className="flex w-full bg-gray-100 items-center justify-center p-6 mt-8 lg:mt-0  flex-1">
           <img src={image} alt="" className="object-contain w-4/5" />
         </div>

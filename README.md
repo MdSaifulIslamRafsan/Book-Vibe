@@ -2,7 +2,7 @@ My Website Name:- Book Vibe
 
 This is my Website live link :- https://assignment-no-08.netlify.app/
 
-## Dynamic sorting:
+# Dynamic Sorting:
 
 Utilizing javascript sorting method , book vibe enables users to dynamically sort book listing based on rating ,number of page , and publication date , enhancing the browsing experience by providing flexible and customizable sorting options.
 

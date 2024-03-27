@@ -19,6 +19,6 @@
 body{
     font-family: "Playfair Display", serif;
 }
-p{
+p , th{
     font-family: "Work Sans", sans-serif;
 }
