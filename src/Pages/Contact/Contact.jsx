@@ -1,6 +1,31 @@
+import {ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 const Contact = () => {
+  const formHandler = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const comment = e.target.comment.value;
+    if (name && email && comment) {
+      console.log(name);
+      console.log(email);
+      console.log(comment);
+      toast.success("form add to console", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
   return (
-    <section className="py-6 my-10 rounded-lg dark:bg-gray-100 dark:text-gray-900">
+    <section className="py-6 my-10 rounded-lg bg-gray-100 text-gray-900">
       <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
         <div className="py-6 md:py-0 md:px-6">
           <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -19,7 +44,7 @@ const Contact = () => {
                   clipRule="evenodd"
                 ></path>
               </svg>
-              <span>Fake address, 9999 City</span>
+              <span>Mirpur, Dhaka</span>
             </p>
             <p className="flex items-center">
               <svg
@@ -47,40 +72,59 @@ const Contact = () => {
           </div>
         </div>
         <form
-          novalidate=""
+          onSubmit={(e) => formHandler(e)}
           className="flex flex-col py-6 space-y-6 md:py-0 md:px-6"
         >
           <label className="block">
             <span className="mb-1">Full name</span>
             <input
               type="text"
-              placeholder="Leroy Jenkins"
-              className="block border-2 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"
+              name="name"
+              required
+              placeholder="Enter Your Name"
+              className="block p-2 border-2 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-600 bg-gray-100"
             />
           </label>
           <label className="block">
             <span className="mb-1">Email address</span>
             <input
               type="email"
-              placeholder="leroy@jenkins.com"
-              className="block border-2 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"
+              name="email"
+              required
+              placeholder="Enter Your Gmail Address"
+              className="block p-2 border-2 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:ring-violet-600 bg-gray-100"
             />
           </label>
           <label className="block">
             <span className="mb-1">Message</span>
             <textarea
+              name="comment"
+              required
               rows="3"
-              className="block w-full border-2 rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"
+              className="block w-full border-2 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-600 bg-gray-100"
             ></textarea>
           </label>
-          <button
-            type="button"
-            className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 dark:bg-violet-600 dark:text-gray-50 focus:dark:ring-violet-600 hover:dark:ring-violet-600"
-          >
-            Submit
-          </button>
+          <input
+            type="submit"
+            value="submit"
+            className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-[#23BE0A] text-gray-50 focus:ring-[#23BE0A] hover:ring-[#23BE0A]"
+          />
         </form>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      {/* Same as */}
+      <ToastContainer />
     </section>
   );
 };

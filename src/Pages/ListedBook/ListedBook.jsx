@@ -7,6 +7,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaUserFriends } from "react-icons/fa";
 import { RiNewspaperLine } from "react-icons/ri";
+import { AiOutlineDown } from "react-icons/ai";
 
 const ListedBooks = () => {
   const booksData = useLoaderData();
@@ -28,29 +29,29 @@ const ListedBooks = () => {
     if (sortName === 'rating') {
 
       const readBooksRating = readBooks.sort((ratingTop , ratingLowest)=> ratingLowest?.rating -  ratingTop?.rating);
-      setReadBookSort(readBooksRating);
+      setReadBookSort([...readBooksRating]);
 
       const wishlistsRating = wishlists.sort((ratingTop , ratingLowest)=> ratingLowest?.rating -  ratingTop?.rating);
-      setWishlistSort(wishlistsRating);
+      setWishlistSort([...wishlistsRating]);
     }
     
     else if(sortName === 'numberOfPages'){
       
       const readBooksTotalPages = readBooks.sort((totalPagesTop , totalPagesLowest)=> totalPagesLowest?.totalPages -  totalPagesTop?.totalPages);
-      setReadBookSort(readBooksTotalPages);
+      setReadBookSort([...readBooksTotalPages]);
 
 
       const wishlistsTotalPages = wishlists.sort((totalPagesTop , totalPagesLowest)=> totalPagesLowest?.totalPages -  totalPagesTop?.totalPages);
-      setWishlistSort(wishlistsTotalPages);
+      setWishlistSort([...wishlistsTotalPages]);
     }
 
     else if(sortName === 'publisherYear'){
       const readBooksPublisherYear = readBooks.sort((publisherYearTop , publisherYearLowest)=> publisherYearLowest?.yearOfPublishing -  publisherYearTop?.yearOfPublishing);
-      setReadBookSort(readBooksPublisherYear);
+      setReadBookSort([...readBooksPublisherYear]);
 
 
       const wishlistsPublisherYear = wishlists.sort((publisherYearTop , publisherYearLowest)=> publisherYearLowest?.yearOfPublishing -  publisherYearTop?.yearOfPublishing);
-      setWishlistSort(wishlistsPublisherYear);
+      setWishlistSort([...wishlistsPublisherYear]);
     }
   };
 
@@ -62,7 +63,7 @@ const ListedBooks = () => {
         <h1 className="text-4xl text-center font-bold">Books </h1>
       </div>
       <details className="dropdown mx-auto flex justify-center w-fit my-10">
-        <summary className="m-1 btn">Sort By</summary>
+        <summary className="m-1 btn bg-[#23BE0A] text-white">Sort By <AiOutlineDown></AiOutlineDown></summary> 
         <ul className="p-2  shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
           <li onClick={() => handelSelectorBtn('rating')}>
             <a>Rating</a>

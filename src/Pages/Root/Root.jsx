@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "../../Component/Header/Header";
+import Footer from './../../Component/Footer/Footer';
 
 
 const Root = () => {
@@ -11,6 +12,7 @@ const Root = () => {
         <main className="max-w-[1440px] mx-auto lg:w-10/12">
             <Outlet></Outlet>
         </main>
+        <Footer></Footer>
         
         </>
     );
